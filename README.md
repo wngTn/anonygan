@@ -42,6 +42,10 @@ Needed libraries are provided in the `requirements.txt` file.
 ## Generating Images Using Pretrained Model
 
 - Download pretrained model [here](https://drive.google.com/file/d/1FWMaBIQfm1-1fLy0ZG7eu--VD91OipJP/view?usp=sharing)
+- Or from CLI:
+  - `pip install gdown`
+  - `mkdir ckpts && cd ckpts`
+  - `gdown 1FWMaBIQfm1-1fLy0ZG7eu--VD91OipJP`
 - Place it in `ckpts/anonygan.ckpt`
 - Preprocess your images with the files in `preparation`
 - Prepare a `.csv` files with columns `[from, to]` with condition and source images names

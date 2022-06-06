@@ -121,7 +121,7 @@ class CustomLoader(Dataset):
             self.mask_dir_fallback = P.join(data_dir, "train_mask")
 
             if not self.iciap:
-                pairs_file_1 = P.join(data_dir, "celeba-pairs-test-new.csv")
+                pairs_file_1 = P.join(data_dir, "celeba-pairs-test.csv") # TONY
 
                 pairs_file_test = pd.read_csv(pairs_file_1, dtype=str)
                 self.size = len(pairs_file_test)
@@ -365,5 +365,5 @@ class AnonyDataset(pl.LightningDataModule):
             lfw=self.lfw,
         )
         return DataLoader(
-            data_test, batch_size=1, num_workers=20, persistent_workers=True
+            data_test, batch_size=1, num_workers=1, persistent_workers=True
         )

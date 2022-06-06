@@ -4,8 +4,8 @@ import numpy as np
 import cv2
 from PIL import Image
 
-kp_dir = "/media/dvl1/SSD_DATA/bigraph-dataset-bis/trainK_68"
-mask_dir = "/media/dvl1/SSD_DATA/bigraph-dataset-bis/train_mask"
+kp_dir = "/home/tonyw/ba/anonygan/data/img_align_celeba/testK_68"
+mask_dir = "/home/tonyw/ba/anonygan/data/img_align_celeba/test_mask"
 
 kp_list = os.listdir(kp_dir)
 
@@ -20,6 +20,7 @@ for kp in kp_list:
     img_msk = np.zeros((218, 178, 3), np.uint8)
     contours = []
     # leftest jaw point, highest left eyebrow point
+    first_y = kps_npy[:,:,0]
     first_y, first_x = np.where(kps_npy[:,:,0]==1)[1][0], np.where(kps_npy[:,:,19]==1)[0][0]
     # righest jaw point, highest right eyebrow point
     last_y, last_x = np.where(kps_npy[:,:,16]==1)[1][0], np.where(kps_npy[:,:,24]==1)[0][0]

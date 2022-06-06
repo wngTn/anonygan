@@ -36,7 +36,7 @@ if __name__ == "__main__":
     opt.same_percentage = 0.0
     opt.train_same_identity = True
 
-    opt.output_path = os.path.join("output", "ablation", opt.name)
+    opt.output_path = os.path.join("output", opt.name)
     os.makedirs(opt.output_path, exist_ok=True)
 
     test(opt)
